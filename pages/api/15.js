@@ -9,7 +9,8 @@ export default function (req, res) {
   const filePath = path.join(__dirname, "img/15/" + ran + ".JPG");
   const imageBuffer = fs.readFileSync(filePath, "utf8");
 
-  res.setHeader("Content-Type", "image/jpg");
-  res.send(imageBuffer);
-  return;
+  // res.setHeader("Content-Type", "image/jpg");
+  // res.send(imageBuffer);
+
+  res.json({ user: { id, name: "Test User" } });
 }
