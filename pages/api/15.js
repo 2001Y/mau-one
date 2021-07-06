@@ -6,11 +6,9 @@ export default function (req, res) {
   var max = 28;
   var ran = Math.floor(Math.random() * (max + 1 - min)) + min;
 
-  const filePath = path.join(__dirname, "img/15/" + ran + ".JPG");
-  const imageBuffer = fs.readFileSync(filePath, "utf8");
+  const filePath = path.resolve(process.cwd(), "img/15/" + ran + ".JPG");
+  const imageBuffer = fs.readFileSync(filePath);
 
-  // res.setHeader("Content-Type", "image/jpg");
-  // res.send(imageBuffer);
-
-  res.json({ user: { id, name: "Test User" } });
+  res.setHeader("Content-Type", "image/jpg");
+  res.send(imageBuffer);
 }
