@@ -1,1 +1,5 @@
-localhost: 3000 / api / 15;
+function MyApp({ Component, pageProps }) {
+  return <h1>テスト</h1>;
+}
+
+export default MyApp;
