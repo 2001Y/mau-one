@@ -9,6 +9,9 @@ export default function FF(req, res) {
   const filePath = path.resolve(process.cwd(), "img/15/" + ran + ".JPG");
   const imageBuffer = fs.readFileSync(filePath);
 
+  console.log(filePath);
+
   res.setHeader("Content-Type", "image/jpg");
+  res.statusCode = 200;
   res.send(imageBuffer);
 }

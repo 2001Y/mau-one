@@ -12,5 +12,6 @@ export default function FF(req, res) {
   console.log(filePath);
 
   res.setHeader("Content-Type", "image/jpg");
+  res.statusCode = 200;
   res.send(imageBuffer);
 }
