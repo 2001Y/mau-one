@@ -6,7 +6,7 @@ export default function (req, res) {
   var max = 15;
   var ran = Math.floor(Math.random() * (max + 1 - min)) + min;
 
-  const filePath = path.resolve(".", "img/14/" + ran + ".JPG");
+  const filePath = path.resolve(process.cwd(), "img/14/" + ran + ".JPG");
   const imageBuffer = fs.readFileSync(filePath);
 
   res.setHeader("Content-Type", "image/jpg");
