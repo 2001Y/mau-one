@@ -6,12 +6,13 @@ export default function FF(req, res) {
   var max = 27;
   var ran = Math.floor(Math.random() * (max + 1 - min)) + min;
 
-  const filePath = path.resolve(process.cwd(), "img/under/" + ran + ".JPG");
-  const imageBuffer = fs.readFileSync(filePath);
+  // const filePath = path.resolve(process.cwd(), "img/under/" + ran + ".JPG");
+  // const imageBuffer = fs.readFileSync(filePath);
 
-  console.log(filePath);
+  // console.log(filePath);
 
-  res.setHeader("Content-Type", "image/jpg");
-  res.statusCode = 200;
-  res.send(imageBuffer);
+  // res.setHeader("Content-Type", "image/jpg");
+  // res.status(200).send(imageBuffer);
+
+  res.redirect("/img/under/" + ran + ".JPG");
 }
